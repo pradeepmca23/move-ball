@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="ball" style="
+    width:50px;
+    height:50px;
+    top: 0px;
+    left: 0px; 
+    border-radius:50%;
+    z-index:5;
+    position:absolute;
+    background-color: brown;
+    top:
+    left
+    "></div>
+    <script>
+        var velocity=100;
+        var xmin=0;
+        var xmax=500;
+        var ymin=0;
+        var ymax=500;
+        var time=1000;
+        var ball=document.getElementById("ball");
+        function move(){
+        if(xmin<xmax && ymin<ymax)
+        {
+            xmin=xmin + velocity;
+            ymin=ymin + velocity;
+            ball.style.left=ymin + 'px'
+            ball.style.top=xmin + 'px'
+        }
+        else if(xmax>0 && ymax>0)
+        {
+            xmax=xmax - velocity;
+            ymax=ymax - velocity;
+            ball.style.left=ymax + 'px'
+            ball.style.top=xmax + 'px'
+        }
+        else
+        {
+            xmin=0
+            ymin=0
+            xmax=500
+            ymax=500
+        }
+        }
+        setInterval(move,time);
+    </script>
+    </body>
+</html>
